@@ -2,7 +2,7 @@ import { useRef } from "react"
 import { useGSAP } from "@gsap/react"
 import { gsap } from "gsap"
 
-export function Decorations({ num, x, y }) {
+export function Decoration({ num, x, y }) {
 
     const output = []
 

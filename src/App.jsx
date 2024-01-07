@@ -4,15 +4,18 @@ import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from 'gsap/TextPlugin';
-import { IconKey } from './component/Decorations';
-import ConversationBox from './component/Timeline';
-import Hero from './component/Hero'
+
+import { IconKey } from './components/Decorations';
+import ConversationBox from './components/Timeline';
+import Hero from './components/Hero'
 import { useRef } from 'react';
 import logo from './img/logo.png'
 import lineMenu from './img/menu-2.png'
 import line_icon from './img/ic_social_line.png'
+import ghLogo from './img/github-mark.png'
 
 //import botReply4 from './img/botReply-4.png'
+
 
 function App() {
 
@@ -106,14 +109,14 @@ Promise.all(promises).then((res)=>{
           index === 8 && tl.fromTo( notification.current , {y: -90 } , { y: 0 , duration:1 ,  ease: 'none' } , "<")
           
           //delay_visable
-          tl.fromTo( delay_visable.current , {width:0 } , { width:'100%' , duration: 1.7 , ease: 'none' })
+          tl.fromTo( delay_visable.current , {width:0 } , { width:'100%' , duration: 2.5 , ease: 'none' })
 
           stopPoint -= item ;
         })
       
       tl.fromTo( explanation.current , {text:'' , opacity:0 } ,{text:{ value: explanationData[explanationData.length-1] , delimiter:""  }, opacity:1  , duration:.5  } )
       tl.to( notification.current , {y: -90 , duration: 1 , ease: 'none' } , "<")
-      tl.fromTo( delay_visable.current , {width:0 } , { width:'100%' , duration: 1.7 , ease: 'none'})
+      tl.fromTo( delay_visable.current , {width:0 } , { width:'100%' , duration: 2.5 , ease: 'none'})
       
 
 })
@@ -123,9 +126,9 @@ Promise.all(promises).then((res)=>{
 
 
   return(
-    <div ref={phone}>
-      <div className='relative max-w-96 m-auto'>
-      <div className=" hidden sm:block absolute -left-10 -bottom-8 w-0">
+    <div className='overflow-hidden min-h-screen flex items-center' ref={phone}> 
+      <div className='relative max-w-96 m-auto '>
+      <div className=" hidden sm:block absolute  -left-20 -bottom-8 w-0">
         <h2 className=' text-slate-200 text-8xl noto-sans-black'>使用說明</h2>
       </div>
       <div className='shadow-sm relative shadow-slate-500 m-auto bg-slate-400 max-w-80 rounded-md'>
@@ -152,13 +155,13 @@ Promise.all(promises).then((res)=>{
 }
 
 function Nav(){
-  return(<div className='absolute top-0 w-full h-20 flex items-center justify-between px-5 md:px-20' >
+  return(<div className='absolute top-0 w-full h-20 flex items-center justify-between px-5 md:px-20 z-50' >
         <div>
           <img className='w-[240px]' src={logo} alt="line-bot" />
         </div>
-        <ul>
-          <li>聯絡我們</li>
-        </ul>
+        <div>
+          <a className=' hover:brightness-[3]' href="https://github.com/meo2326cc/linebot_air"><img className='w-8' src={ghLogo} alt="linebotair-github" /></a>
+        </div>
       </div>)
 }
 
@@ -169,7 +172,7 @@ function NotificationBox({boxRef}) {
   <img className='w14 h-14' src={line_icon} alt="" />
   <div className='ms-2'>
     <p className=' text-sm font-semibold'>空氣品質監測</p>
-    <p className=' text-xs '>⚠️追蹤結果【士林】  目前🟠【士林】的空氣品質對敏感族群不健康，AQI為103</p>
+    <p className=' text-xs '>⚠️🟠目前【士林】的空氣品質對敏感族群不健康，AQI為103</p>
   </div>
 </div>)
 }
