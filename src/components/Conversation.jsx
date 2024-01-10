@@ -1,4 +1,5 @@
 import air from '../img/air.png'
+import line_icon from '../img/ic_social_line.png'
   
   export function ConversationMe({content}) {
   
@@ -37,4 +38,13 @@ import air from '../img/air.png'
     )
   }
 
-  
+  export function NotificationBox({boxRef}) {
+
+    return(<div className='flex bg-slate-100/90 m-2 rounded-2xl shadow-md items-center p-2 absolute z-10' ref={boxRef}>
+    <img className='w14 h-14' src={line_icon} alt="" />
+    <div className='ms-2'>
+      <p className=' text-sm font-semibold'>空氣品質監測</p>
+      <p className=' text-xs '>⚠️🟠目前【士林】的空氣品質對敏感族群不健康，AQI為103</p>
+    </div>
+  </div>)
+  }
