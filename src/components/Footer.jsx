@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import addFriend from '../img/addFriend.png'
 import qr from '../img/qr-green.png'
 
-export default function Content() {
+export default function Footer() {
 
     const box = useRef()
     gsap.registerPlugin(ScrollTrigger)
@@ -22,7 +22,7 @@ export default function Content() {
     }, {})
 
     return (
-        <div className="min-h-screen flex items-center justify-center" >
+        <div className="min-h-screen flex items-center justify-center relative" >
             <div ref={box}>
                 <h2 className='text-center mb-16 text-md md:text-xl lg:text-2xl mt-2 noto-sans-bold'> 很不錯吧，現在就立即使用，毋需額外設定 </h2>
                 <div className='w-44 m-auto relative'>
@@ -36,8 +36,11 @@ export default function Content() {
                         <img className="w-44 border rounded-lg border-green-600 " src={addFriend} alt="linebot空氣品質監測加入好友" /></a>
                 </div>
             </div>
-
+<div className='absolute left-0 right-0 bottom-0 text-center py-5'>
+      <p>2024 line空氣品質機器人</p>
+    </div>
         </div>
     )
 
 }
+

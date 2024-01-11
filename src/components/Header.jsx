@@ -1,7 +1,7 @@
 import ghLogo from '../img/github-mark.png'
 import logo from '../img/logo.png'
 
-export function Nav(){
+export default function Header (){
     return(<div className='absolute top-0 w-full h-20 flex items-center justify-between px-5 md:px-20 z-50' >
           <div>
             <img className='w-[240px]' src={logo} alt="line-bot" />
@@ -12,9 +12,3 @@ export function Nav(){
         </div>)
   }
   
-
-export function Footer(){
-    return(<div className='text-center py-10 '>
-      <p>2024 line空氣品質機器人</p>
-    </div>)
-}

@@ -1,9 +1,9 @@
 //import { useState } from 'react'
 import './css/output.css'
-import Content from './components/Content'
 import Animation from './components/Animation'
 import Hero from './components/Hero'
-import { Footer , Nav } from './components/HeaderFooter'
+import  Header  from './components/Header'
+import Footer from './components/Footer'
 
 //import botReply4 from './img/botReply-4.png'
 
@@ -12,10 +12,9 @@ function App() {
 
   return (
     <>
-      <Nav/>
+      <Header/>
       <Hero/>
       <Animation />
-      <Content/>
       <Footer/>
     </>
   )
