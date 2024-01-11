@@ -13,9 +13,12 @@
 
 一開始的想法是在開發畫面時用GSAP建立時間軸，並把line的對話事先排好，然後使用forEach迴圈抓取每個對話框DOM元素的高度，等到捲到觸發的點時再向下捲動欲呈現的對話框高度就可以營造出聊天訊息的效果。
 
+![demo](https://github.com/meo2326cc/linebot_intro/assets/107049397/eaba94eb-90fe-4b40-a78d-77af31875d6e)
+
+
 然而，對話框中有的以圖片呈現，這會導致在圖片載入完之前取到的DOM元素高度是錯誤的，一開始想說在其中使用promise就可以解決，但無論如何也不會成功，直到閱讀了[此篇](https://israynotarray.com/javascript/20211029/2739130728/)才知道要使用for迴圈才可以成功使用promise。
 
-```
+```javascript
 let promises = []
     
   
