@@ -56,7 +56,7 @@ for( let i = 0 ; i < boxel.length ; i++ ){
 
 ```
 
-不過這邊仍然有個問題，就是需要使用 Promise.all 來取得`addEventListener()`中 load 的狀態，因為一開始只有在判斷有圖片的對話框加上 Promise ，導致元素的順序一直出問題，後來才發覺，由於需要等待陣列中的 Promise 都執行完，所以無論該元素是不是圖片，都需要加上promise，才能在 Promise.all 後取得全部 resolve 的結果。
+不過這邊仍然有個問題，就是需要使用 Promise.all 來取得`addEventListener()`中 load 的狀態，因為一開始只有在判斷有圖片的對話框加上 Promise ，導致元素的順序一直出問題，後來才發覺，由於需要等待陣列中的 Promise 都執行完，所以無論該元素是不是圖片，都需要加上 Promise，才能在 Promise.all 後取得全部 resolve 的結果。
 
 ```javascript
 
