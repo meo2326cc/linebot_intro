@@ -3,7 +3,7 @@ import { IconScroll } from "./Decorations"
 import city from '../img/city.jpg'
 import view from '../img/14800027.jpg'
 import qr from '../img/qr-green.png'
-import addFriend from '../img/addFriend.png'
+import addFriend from '../img/addfriend.png'
 import { useEffect, useRef } from "react"
 
 
